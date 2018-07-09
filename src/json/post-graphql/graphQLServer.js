@@ -22,20 +22,15 @@ function graphQLServer (options, request, callback) {
   apollo_server_core_1
     .runHttpQuery([request], queryRequest)
     .then(function (gqlResponse) {
-      var result = {
-        status: 200,
-        isRaw: true,
-        headers: { 'Content-Type': 'application/json' },
-        body: gqlResponse
+      const result = {
+        json: gqlResponse
       }
       callback(null, result)
     })
     .catch(function (error) {
-      var result = {
+      const result = {
         status: error.statusCode,
-        headers: error.headers,
-        isRaw: true,
-        body: error.message
+        json: error.message
       }
 
       callback(null, result)

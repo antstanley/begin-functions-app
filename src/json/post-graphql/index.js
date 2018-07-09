@@ -23,9 +23,7 @@ function route(req, res) {
 
 	graphqlServer(options, req, (err, response) => {
 		if (err) {
-			res({
-				json: response
-			})
+			res(response)
 		} else {
 			res({
 				status: '404',
