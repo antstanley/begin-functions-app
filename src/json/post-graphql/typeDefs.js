@@ -2,8 +2,13 @@ var schema = `
 scalar JSON
 scalar DateTime
 
+input bookInput {
+  title: String,
+  author: String
+}
+
 type mutation { 
-    addBook(input: Book!): DateTime 
+    addBook(input: bookInput!): DateTime 
 }
 
 type query { 

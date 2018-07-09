@@ -31,7 +31,7 @@ function graphQLServer (options, request, callback) {
       console.log(`Error: ${error}`)
       const result = {
         status: 404,
-        json: error
+        json: JSON.stringify(error)
       }
 
       callback(null, result)
