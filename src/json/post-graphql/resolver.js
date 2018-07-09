@@ -26,12 +26,12 @@ const createBook = (input) => {
 module.exports = {
     JSON: scalarJSON,
     DateTime: scalarDateTime,
-    mutation: {
+    Mutation: {
         addBook: (input) => {
             return createBook (input) 
         }
     },
-    query: {
+    Query: {
         books: ()=> books
     }
 };
