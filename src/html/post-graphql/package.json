@@ -1,7 +1,0 @@
-{
-  "name": "jolly-pond-547-post-graphql",
-  "dependencies": {
-    "@architect/functions": "latest",
-    "@begin-functions/data": "latest"
-  }
-}
