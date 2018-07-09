@@ -16,12 +16,12 @@ function route(req, res) {
 
 	const schema = graphqlTools.makeExecutableSchema({
 		typeDefs,
-    	resolvers
+		resolvers
 	})
 
 	options.schema = schema
 
-	graphQLserver(options, req, (err, response) => {
+	graphQLServer(options, req, (err, response) => {
 		if (err) {
 			res({
 				json: response
