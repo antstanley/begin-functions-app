@@ -1,5 +1,5 @@
 let begin = require('@architect/functions')
-const graphQLServer = require('./graphQLServer.js')
+const graphqlServer = require('./graphQLServer.js')
 const graphqlTools = require('graphql-tools')
 
 const typeDefs = require('./typeDefs.js')
@@ -21,7 +21,7 @@ function route(req, res) {
 
 	options.schema = schema
 
-	graphQLServer(options, req, (err, response) => {
+	graphqlServer(options, req, (err, response) => {
 		if (err) {
 			res({
 				json: response
