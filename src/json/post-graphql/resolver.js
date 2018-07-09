@@ -29,7 +29,7 @@ module.exports = {
     JSON: scalarJSON,
     DateTime: scalarDateTime,
     Mutation: {
-        addBook: (root, { input }) => {
+        addBook: (_, input) => {
             return createBook (input) 
         }
     },
