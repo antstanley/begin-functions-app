@@ -1,4 +1,5 @@
 let begin = require('@architect/functions')
+const graphiql = require('./graphiql.js')
 
 function route(req, res) {
   console.log(JSON.stringify(req, null, 2))
@@ -7,7 +8,7 @@ function route(req, res) {
 	    endpointURL: '/api/graphql'
 	}
 
-	server.respondGraphiQLHTML(options, request.query, (err,response)=> {
+	graphiql(options, request.query, (err,response)=> {
 	    if (response) {
 	    	res(response)
 	    } else {	    
