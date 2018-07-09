@@ -18,7 +18,7 @@ const createBook = (input) => {
 
     let currDate = new Date()
 
-    console.log(`Input: ${input}`)
+    console.log(`Input: ${JSON.parse(input)}`)
 
     books.push(input)
     return currDate 
