@@ -29,7 +29,7 @@ function graphQLServer (options, request, callback) {
     })
     .catch(function (error) {
       const result = {
-        status: 404,
+        code: 404,
         json: error.message
       }
 

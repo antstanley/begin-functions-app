@@ -26,7 +26,7 @@ function route(req, res) {
 			res(response)
 		} else {
 			res({
-				status: '404',
+				code: 404,
 				json: {
 					error: JSON.stringify(err)
 				}

@@ -11,7 +11,7 @@ function route(req, res) {
 	graphiql(options, req.query, (err,response)=> {
 		if (err) {
 			res({
-				status: '404',
+				code: 404,
 				html: "Request can't be fulfilled"
 			})
 		} else {	    
