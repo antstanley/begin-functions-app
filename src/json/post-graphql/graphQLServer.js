@@ -22,8 +22,9 @@ function graphQLServer (options, request, callback) {
   apollo_server_core_1
     .runHttpQuery([request], queryRequest)
     .then(function (gqlResponse) {
+      console.log(gqlResponse)
       const result = {
-        json: JSON.parse(gqlResponse)
+        json: JSON.stringify(gqlResponse)
       }
       callback(null, result)
     })
