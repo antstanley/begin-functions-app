@@ -24,11 +24,15 @@ function route(req, res) {
 
 	graphqlServer(options, req, (err, response) => {
 		if (err) {
+
+			console.log (`Error Response: ${res}`)
+
 			res({
 				status: 404,
-				json: JSON.stringify(err)
+				json: err
 			})
 		} else {
+			console.log (`Success Response: ${res}`)
 			res(response)
 		}
 	})

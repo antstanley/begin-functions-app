@@ -24,7 +24,7 @@ function graphQLServer (options, request, callback) {
     .then(function (gqlResponse) {
       console.log(gqlResponse)
       const result = {
-        json: JSON.parse(gqlResponse.graphqlResponse)
+        json: gqlResponse.graphqlResponse
       }
       callback(null, result)
     })
@@ -32,7 +32,7 @@ function graphQLServer (options, request, callback) {
       console.log(`Error: ${error}`)
       const result = {
         status: 404,
-        json: JSON.stringify(error)
+        json: error
       }
 
       callback(null, result)
