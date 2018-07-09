@@ -10,7 +10,7 @@ function graphiqlFunctions(options, query, callback) {
         callback(null,result);
 
     }, function (error) {
-        result = {
+        let result = {
             status: 500,
             html: error.message,
         };
