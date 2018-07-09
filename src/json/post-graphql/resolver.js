@@ -13,6 +13,9 @@ let books = [
 ];
 
 const createBook = (input) => {
+
+// just updating the object in memory... should be a write to a DB
+
     let currDate = new Date()
 
     books.push(input)
