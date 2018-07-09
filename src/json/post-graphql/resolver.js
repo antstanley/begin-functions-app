@@ -18,9 +18,7 @@ const createBook = (input) => {
 
     let currDate = new Date()
 
-    console.log(`Input: ${JSON.stringify(input)}`)
-
-    books.push(input)
+    books.push(input.input)
     return currDate 
 }
 
