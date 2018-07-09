@@ -5,7 +5,7 @@ function route(req, res) {
 	console.log(JSON.stringify(req, null, 2))
 
 	let options = {
-		endpointURL: '/api/graphql'
+		endpointURL: '/graphql'
 	}
 
 	graphiql(options, req.query, (err,response)=> {
