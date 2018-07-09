@@ -21,14 +21,15 @@ function route(req, res) {
 
 	options.schema = schema
 
+
 	graphqlServer(options, req, (err, response) => {
 		if (err) {
-			res(response)
-		} else {
 			res({
 				status: 404,
 				json: JSON.stringify(err)
 			})
+		} else {
+			res(response)
 		}
 	})
 }
