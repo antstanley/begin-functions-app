@@ -23,7 +23,7 @@ function graphQLServer (options, request, callback) {
     .runHttpQuery([request], queryRequest)
     .then(function (gqlResponse) {
       const result = {
-        json: gqlResponse
+        json: JSON.parse(gqlResponse)
       }
       callback(null, result)
     })
