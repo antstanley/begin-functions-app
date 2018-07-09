@@ -15,7 +15,7 @@ test('sandbox.start', t=> {
     t.ok(true, 'opened')
   })
 })
-
+/*
 // callback style
 test('get /', t=> {
   t.plan(1)
@@ -61,6 +61,7 @@ test('get /', async t=> {
     console.log(e)
   }
 })
+*/
 
 test('sandbox.end', t=> {
   t.plan(1)
