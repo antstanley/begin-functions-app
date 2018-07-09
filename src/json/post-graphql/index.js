@@ -11,7 +11,7 @@ function route(req, res) {
 
 
 	let options = {
-		endpointURL: '/graphql'
+		endpointURL: '/staging/graphql'
 	}
 
 	const schema = graphqlTools.makeExecutableSchema({
