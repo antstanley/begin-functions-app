@@ -13,7 +13,7 @@ function route(req, res) {
 	    	res(response)
 	    } else {	    
 		    res({
-		    	status: '404'
+		    	status: '404',
 	    		html: "Request can't be fulfilled"
 	  		})
 
