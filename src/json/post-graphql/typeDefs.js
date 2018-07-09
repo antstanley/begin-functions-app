@@ -7,11 +7,11 @@ input bookInput {
   author: String
 }
 
-type mutation { 
+type Mutation { 
     addBook(input: bookInput!): DateTime 
 }
 
-type query { 
+type Query { 
   books: [Book] 
 }
 
