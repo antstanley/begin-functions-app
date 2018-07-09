@@ -2,13 +2,13 @@ let begin = require('@architect/functions')
 const graphiql = require('./graphiql.js')
 
 function route(req, res) {
-  console.log(JSON.stringify(req, null, 2))
+	console.log(JSON.stringify(req, null, 2))
 
-  let options = {
+	let options = {
 	    endpointURL: '/api/graphql'
 	}
 
-	graphiql(options, request.query, (err,response)=> {
+	graphiql(options, req.query, (err,response)=> {
 	    if (response) {
 	    	res(response)
 	    } else {	    
@@ -18,8 +18,7 @@ function route(req, res) {
 	  		})
 
 	    }
-	});
-  
+	}); 
 }
 
 exports.handler = begin.html.get(route)
