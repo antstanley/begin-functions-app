@@ -24,7 +24,7 @@ function graphQLServer (options, request, callback) {
     .then(function (gqlResponse) {
       console.log(gqlResponse)
       const result = {
-        json: gqlResponse.graphqlResponse
+        json: gqlResponse.graphqlResponse.data
       }
       callback(null, result)
     })
