@@ -21,18 +21,7 @@ const getAllBooks = async () => {
         if (err) throw err
 
         console.log(JSON.stringify(page.docs))
-        //console.log(JSON.stringify(page))
 
-        /*
-        let responseArray = []
-        let i = page.docs.length
-
-        while (i--) {
-            let { title, author } = page.docs[i]
-            console.log({title, author})
-            responseArray.push({title, author})
-        }
-        */
 
         return Array.from(page.docs, arrVal => {return { author, title } = arrVal} )
     })
