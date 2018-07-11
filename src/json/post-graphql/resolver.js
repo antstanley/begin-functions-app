@@ -23,7 +23,16 @@ const getAllBooks = () => {
         console.log(JSON.stringify(page.docs))
         console.log(JSON.stringify(page))
 
-        return page.docs
+        let responseArray = []
+        let i = page.docs.length
+
+        while (i--) {
+            let { title, author } = page.docs[i]
+            console.log({title, author})
+            responseArray.push({title, author})
+        }
+
+        return responseArray
     })
 
 }
