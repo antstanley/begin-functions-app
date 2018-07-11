@@ -23,7 +23,9 @@ const getAllBooks = async () => {
         console.log(JSON.stringify(page.docs))
 
 
-        return Array.from(page.docs, arrVal => {return { author, title } = arrVal} )
+        return Array.from(page.docs, arrVal => {
+            let { author, title } = arrVal
+            return {author, title} } )
     })
 
 }
