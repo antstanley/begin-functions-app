@@ -25,6 +25,7 @@ const getAllBooks = async () => {
 
         return Array.from(page.docs, arrVal => {
             let { author, title } = arrVal
+            console.log (`${title} - ${author}`)
             return {author, title} } )
     })
 
