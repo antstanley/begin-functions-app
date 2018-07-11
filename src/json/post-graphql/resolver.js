@@ -30,9 +30,10 @@ const getAllBooks = () => {
             let { title, author } = page.docs[i]
             console.log({title, author})
             responseArray.push({title, author})
-        }
-
-        return responseArray
+            if (responseArray.length === page.docs.length) {
+                return responseArray
+            }
+        }       
     })
 
 }
