@@ -29,7 +29,7 @@ const getAllBooks = async () => {
         while (i--) {
             let { title, author } = page.docs[i]
             console.log({title, author})
-            responseArray.push({title, author})
+            await responseArray.push({title, author})
         }
 
         return responseArray
