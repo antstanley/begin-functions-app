@@ -63,6 +63,10 @@ module.exports = {
         }
     },
     Query: {
-        books: () => {return getAllBooks()}
+        books: () => {
+            let bookresponse = getAllBooks()
+            console.log(bookresponse)
+            return bookresponse
+        }
     }
 };
