@@ -24,7 +24,7 @@ const getAllBooks = async () => {
         console.log(JSON.stringify(page))
 
 
-        let queryResp = await () => {
+        let queryResp = async () => {
             let responseArray = []
             let i = page.docs.length
 
@@ -35,7 +35,7 @@ const getAllBooks = async () => {
             }
         }
 
-        return queryResp
+        return await queryResp
     })
 
 }
