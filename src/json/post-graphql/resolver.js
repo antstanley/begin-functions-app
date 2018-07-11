@@ -23,19 +23,16 @@ const getAllBooks = async () => {
         console.log(JSON.stringify(page.docs))
         console.log(JSON.stringify(page))
 
+        let responseArray = []
+        let i = page.docs.length
 
-        let queryResp = async () => {
-            let responseArray = []
-            let i = page.docs.length
-
-            while (i--) {
-                let { title, author } = page.docs[i]
-                console.log({title, author})
-                responseArray.push({title, author})
-            }
+        while (i--) {
+            let { title, author } = page.docs[i]
+            console.log({title, author})
+            responseArray.push({title, author})
         }
 
-        return await queryResp
+        return responseArray
     })
 
 }
@@ -67,7 +64,7 @@ module.exports = {
     },
     Query: {
         books: () => {
-            let bookresponse = getAllBooks()
+            let bookresponse = await getAllBooks()
             console.log(bookresponse)
             return bookresponse
         }
