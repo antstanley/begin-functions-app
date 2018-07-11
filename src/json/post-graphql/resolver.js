@@ -15,7 +15,7 @@ let books = [
 ];
 */
 
-const getAllBooks = () => {
+const getAllBooks = async () => {
 
     data.get ({ns: 'books'}, (err, page) => {
         if (err) throw err
@@ -23,17 +23,19 @@ const getAllBooks = () => {
         console.log(JSON.stringify(page.docs))
         console.log(JSON.stringify(page))
 
-        let responseArray = []
-        let i = page.docs.length
 
-        while (i--) {
-            let { title, author } = page.docs[i]
-            console.log({title, author})
-            responseArray.push({title, author})
-            if (responseArray.length === page.docs.length) {
-                return responseArray
+        let queryResp = await () => {
+            let responseArray = []
+            let i = page.docs.length
+
+            while (i--) {
+                let { title, author } = page.docs[i]
+                console.log({title, author})
+                responseArray.push({title, author})
             }
-        }       
+        }
+
+        return queryResp
     })
 
 }
