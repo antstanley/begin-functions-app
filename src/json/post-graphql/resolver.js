@@ -17,7 +17,7 @@ let books = [
 
 const getAllBooks = () => {
 
-    data.get ( {ns: 'books'}, (err, page) => {
+    data.get ({ns: 'books'}, (err, page) => {
         if (err) throw err
 
         console.log(JSON.stringify(page.docs))
@@ -54,6 +54,6 @@ module.exports = {
         }
     },
     Query: {
-        books: getAllBooks()
+        books: () => {return getAllBooks()}
     }
 };
