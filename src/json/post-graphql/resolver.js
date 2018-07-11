@@ -63,7 +63,7 @@ module.exports = {
         }
     },
     Query: {
-        books: () => {
+        books: async () => {
             let bookresponse = await getAllBooks()
             console.log(bookresponse)
             return bookresponse
