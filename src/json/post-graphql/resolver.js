@@ -58,9 +58,7 @@ module.exports = {
     },
     Query: {
         books: async () => {
-            let bookresponse = await getAllBooks()
-            console.log(bookresponse)
-            return bookresponse
+            return await getAllBooks()
         }
     }
 };
