@@ -2,7 +2,7 @@
   "name": "jolly-pond-547-post-graphql",
   "dependencies": {
     "@architect/functions": "latest",
-    "@begin-functions/data": "latest",
+    "@begin-functions/data": "^1.0.4",
     "apollo-server-core": "^2.0.0-rc.6",
     "graphql": "^14.0.0-rc.2",
     "graphql-iso-date": "^3.5.0",

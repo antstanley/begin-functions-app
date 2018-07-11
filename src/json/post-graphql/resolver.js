@@ -1,6 +1,8 @@
 const scalarJSON = require('graphql-type-json');
 const scalarDateTime = require('graphql-iso-date');
+let data = require('@begin-functions/data');
 
+/*
 let books = [
   {
     title: "Harry Potter and the Sorcerer's stone",
@@ -11,14 +13,34 @@ let books = [
     author: 'Michael Crichton',
   },
 ];
+*/
+
+const getAllBooks = () => {
+
+    data.get ( {ns: 'books'}, (err, page) => {
+        if (err) throw err
+
+        console.log(JSON.stringify(page.docs))
+        console.log(JSON.stringify(page))
+
+        return page.docs
+    })
+
+}
 
 const createBook = (input) => {
 
-// just updating the object in memory... should be a write to a DB
+// writing object to BFD now... 
 
     let currDate = new Date()
 
-    books.push(input.input)
+    let { title, author } = input.input
+
+    data.set(
+      {ns: 'books', title: title, author: author}
+    )
+
+    //books.push(input.input)
     return currDate 
 }
 
@@ -32,6 +54,6 @@ module.exports = {
         }
     },
     Query: {
-        books: ()=> books
+        books: getAllBooks()
     }
 };
